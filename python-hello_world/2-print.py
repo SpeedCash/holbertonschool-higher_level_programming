@@ -1,3 +1,8 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-print("\"Programming is like building a multilingual puzzle\n")
+# Write a Python script that prints exactly
+# "Programming is like building a multilingual puzzle,
+# followed by a new line.
+
+print("\"Programming is like building a multilingual puzzle")
