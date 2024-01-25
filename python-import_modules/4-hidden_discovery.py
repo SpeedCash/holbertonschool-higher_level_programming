@@ -4,7 +4,8 @@ import sys
 
 
 def main():
-    curl_command = "curl -Lso "hidden_4.pyc" "https://github.com/hs-hq/0x02.py/raw/main/hidden_4.pyc"
+    curl_command = "curl -Lso "hidden_4.pyc"
+    "https://github.com/hs-hq/0x02.py/raw/main/hidden_4.pyc""
     os.system(curl_command)
 
     module_name = "hidden_4"
