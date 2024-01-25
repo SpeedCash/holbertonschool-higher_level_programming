@@ -9,14 +9,15 @@ def main():
     os.system(curl_command)
 
     module_name = "hidden_4"
-    module_spec = importlib.util.spec_from_file_location
-    (module_name, "./hidden_4.pyc")
-    module = importlib.util.module_from_spec(module_spec)
-    module_spec.loader.exec_module(module)
+    module_spec = importlib.util.spec_from_file_location(
+        module_name, "./hidden_4.pyc")
+    if module_spec:
+        module = importlib.util.module_from_spec(module_spec)
+        module_spec.loader.exec_module(module)
 
-    for name in dir(module):
-        if not name.startswith("__"):
-            print(name)
+        for name in dir(module):
+            if not name.startswith("__"):
+                print(name)
 
 
 if __name__ == "__main__":
