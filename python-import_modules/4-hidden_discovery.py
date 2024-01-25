@@ -2,6 +2,8 @@
 import importlib.util
 import os
 
+if __name__ == "__main__":
+
 
 def main():
     curl_command = ("curl -Lso 'hidden_4.pyc' "
@@ -18,7 +20,3 @@ def main():
         for name in dir(module):
             if not name.startswith("__"):
                 print(name)
-
-
-if __name__ == "__main__":
-    main()
