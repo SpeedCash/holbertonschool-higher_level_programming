@@ -5,6 +5,7 @@ The Square class is an empty class that defines a square.
 No attributes or methods are defined in this version.
 """
 
+
 class Square:
     """
     An empty class that defines a square.
