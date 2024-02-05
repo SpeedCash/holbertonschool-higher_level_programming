@@ -5,8 +5,8 @@ class Square:
     - Instantiation with optional size: def __init__(self, size=0)
     - Property def size(self) to retrieve it
     - Property setter def size(self, value) to set it:
-        * size must be an integer, otherwise raise a TypeError exception with the message 'size must be an integer'
-        * if size less than 0, raise a ValueError exception with 'size must be >= 0'
+        * size must be integer, otherwise TypeError exception 'size must be an integer'
+        * if size less than 0, raise a ValueError exception 'size must be >= 0'
     - Public instance method: def area(self) returns current square area.
     """
 
