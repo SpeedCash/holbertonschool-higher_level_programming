@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-
-
-class Square:
-    """Class Square that defines a square by:
+"""Class Square that defines a square by:
     - A private instance attribute: size
     - A private instance attribute: position
     - Instantiation with optional size and position
@@ -10,6 +7,10 @@ class Square:
     - A method to calculate the area of the square
     - A method to print the square using the character '#' considering the position
     """
+
+
+class Square:
+
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with a default size of 0 and a default position of (0,0), with validation."""
