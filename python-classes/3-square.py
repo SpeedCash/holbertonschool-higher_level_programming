@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""Define a square by its size to calculate its area."""
+
 
 class Square:
-    """Define a square by its size to calculate its area."""
-
     def __init__(self, size=0):
         """
         Initialize a new square.
