@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-
-class Square:
-    """Class Square that defines a square by:
+"""Class Square that defines a square by:
     - A private instance attribute: size
     - Instantiation with optional size: def __init__(self, size=0)
     - Property and property setter to retrieve and set it with validation
     - A method to calculate the area of the square
     - A method to print the square using the character '#'
     """
+class Square:
+
 
     def __init__(self, size=0):
         """Initialize the square with a default size of 0, with validation."""
