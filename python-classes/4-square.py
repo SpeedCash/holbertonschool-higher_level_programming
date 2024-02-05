@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-
-class Square:
-    """Class Square that defines a square by:
+"""Class Square that defines a square by:
     - Private instance attribute: size
     - Instantiation with optional size: def __init__(self, size=0)
     - Property def size(self) to retrieve it
@@ -11,6 +9,7 @@ class Square:
     - Public instance method: def area(self) returns current square area.
     """
 
+class Square:
     def __init__(self, size=0):
         """Initialize the square with an optional size."""
         self.size = size
