@@ -1,25 +1,25 @@
 #!/usr/bin/python3
 """
-This module defines the add_integer function that adds two numbers.
-The function is designed to meet the specific requirements and test cases
-outlined in the project instructions and the associated test file.
+Ce module offre une fonction add_integer qui ajoute deux nombres.
+
+La fonction prend deux paramètres, a et b, qui doivent être des entiers
+ou des flottants. Si a ou b ne sont pas de ces types, une TypeError est levée.
 """
 
 
 def add_integer(a, b=98):
     """
-    Adds two numbers after validating their type.
+    Ajoute deux entiers ou flottants après les avoir convertis en entiers.
 
     Args:
-        a (int, float): The first number, must be an integer or float.
-        b (int, float, optional): Second number, must be an integer or float.
-            Defaults to 98.
+        a: Le premier nombre, doit être un entier ou un flottant.
+        b: Le deuxième nombre, doit être un entier ou un flottant.
 
     Returns:
-        int: The sum of a and b as integers.
+        Le résultat de l'addition des deux nombres convertis en entiers.
 
     Raises:
-        TypeError: If either a or b is not an integer or float.
+        TypeError: Si a ou b ne sont pas des entiers ou des flottants.
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
