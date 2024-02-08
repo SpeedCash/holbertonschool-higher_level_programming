@@ -1,27 +1,39 @@
 #!/usr/bin/python3
-"""Class Square that defines a square by:
-    - Private instance attribute: size
-    - Instantiation with optional size: def __init__(self, size=0)
-    - Property def size(self) to retrieve it
-    - Property setter def size(self, value) to set it:
-        * size must be integer, otherwise TypeError exception 'size must be an integer'
-        * if size less than 0, raise a ValueError exception 'size must be >= 0'
-    - Public instance method: def area(self) returns current square area.
-    """
+"""
+Module 4-square
+Defines a class Square with a private instance attribute getter and setter,
+and a public instance method that returns the square area
+"""
+
 
 class Square:
+    """Defines a square by its size, with validation calculate its area."""
     def __init__(self, size=0):
-        """Initialize the square with an optional size."""
-        self.size = size
+        """
+        Initializes the square
+
+        Args:
+        size (int, optional): The size of a side of the square. Defaults to 0.
+        """
+        self.size = size  # Utilizes the setter to enforce type/value checks
 
     @property
     def size(self):
-        """Retrieve the size of the square."""
+        """Retrieves the size of the square."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Set the size of the square, checks integer type and value >= 0."""
+        """
+        Sets the size of the square, with validation.
+
+        Args:
+        value (int): The new size of the square.
+
+        Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -29,5 +41,21 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Return the current square area."""
-        return self.__size ** 2
+        """Returns the current square area."""
+        return self.size ** 2
+
+
+if __name__ == "__main__":
+    Square = __import__('4-square').Square
+
+    my_square = Square(89)
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+    my_square.size = 3
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+    try:
+        my_square.size = "5 feet"
+        print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+    except Exception as e:
+        print(e)
