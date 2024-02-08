@@ -1,26 +1,39 @@
 #!/usr/bin/python3
-"""Class Square that defines a square by:
-    - A private instance attribute: size
-    - Instantiation with optional size: def __init__(self, size=0)
-    - Property and property setter to retrieve and set it with validation
-    - A method to calculate the area of the square
-    - A method to print the square using the character '#'
-    """
+"""
+Module 5-square
+Defines a class Square with private instance attribute size getter and setter,
+a method calculate area, and a method print the square using the "#" character.
+"""
+
+
 class Square:
-
-
+    """Defines square by its size, and includes method to print square."""
     def __init__(self, size=0):
-        """Initialize the square with a default size of 0, with validation."""
-        self.size = size
+        """
+        Initializes the square
+
+        Args:
+        size (int, optional): The size of a side of the square. Defaults to 0.
+        """
+        self.size = size  # Uses the setter
 
     @property
     def size(self):
-        """Retrieve the size of the square."""
+        """Retrieves the size of the square."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Set the size of the square with validation."""
+        """
+        Sets the size of the square, with validation.
+
+        Args:
+        value (int): The new size of the square.
+
+        Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -28,13 +41,32 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Return the current square area."""
-        return self.__size ** 2
+        """Returns the current square area."""
+        return self.size ** 2
 
     def my_print(self):
-        """Print the square with the character '#'."""
-        if self.__size == 0:
+        """Prints the square with the character '#' or empty line if size 0."""
+        if self.size == 0:
             print()
         else:
-            for i in range(self.__size):
-                print("#" * self.__size)
+            for row in range(self.size):
+                print("#" * self.size)
+
+
+if __name__ == "__main__":
+    Square = __import__('5-square').Square
+
+    my_square = Square(3)
+    my_square.my_print()
+
+    print("--")
+
+    my_square.size = 10
+    my_square.my_print()
+
+    print("--")
+
+    my_square.size = 0
+    my_square.my_print()
+
+    print("--")
