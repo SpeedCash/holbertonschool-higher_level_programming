@@ -5,7 +5,6 @@ This module defines an empty class Rectangle that defines a rectangle.
 
 
 class Rectangle:
-    """
-    An empty class that defines a rectangle.
-    """
-    pass
+    """A class that defines a rectangle, minimally initialized."""
+    def __init__(self):
+        pass
