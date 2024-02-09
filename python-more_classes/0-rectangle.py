@@ -5,5 +5,7 @@ This module defines an empty class Rectangle that defines a rectangle.
 
 
 class Rectangle:
-    """A class that defines a rectangle with a dummy attribute."""
-    dummy = None
+    """
+    An empty class that defines a rectangle.
+    """
+    pass
