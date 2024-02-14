@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 class MyList(list):
-    """Inherits from list and adds the ability to print the list in sorted order."""
+    """Inherits from list and adds the ability to print the list\
+        in sorted order."""
 
     def print_sorted(self):
-        """Prints the list in ascending order without altering the original list."""
+        """Prints the list in ascending order without altering\
+            the original list."""
         print(sorted(self))
+
 
 if __name__ == "__main__":
     # Exemple de test pour vérifier le fonctionnement de la classe
