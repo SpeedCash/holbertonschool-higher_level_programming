@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 class BaseGeometry:
     """A class BaseGeometry with unimplemented area method."""
 
