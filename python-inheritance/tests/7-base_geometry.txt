@@ -1,0 +1,18 @@
+# Exemple de contenu pour 7-base_geometry.txt simulant des tests doctest
+
+Test de la méthode integer_validator avec un entier valide:
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+(None)
+
+Test de la méthode integer_validator avec une chaîne de caractères (devrait échouer):
+>>> bg.integer_validator("name", "John")
+Exception: name must be an integer
+
+Test de la méthode integer_validator avec un entier négatif (devrait échouer):
+>>> bg.integer_validator("age", -10)
+Exception: age must be greater than 0
+
+Test de la méthode integer_validator avec zéro (devrait échouer):
+>>> bg.integer_validator("distance", 0)
+Exception: distance must be greater than 0
