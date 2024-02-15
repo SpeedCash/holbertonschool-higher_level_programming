@@ -1,19 +1,29 @@
 #!/usr/bin/python3
 """
-    hhhhhhhh
+This module defines a write_file function that writes a string to a text file
+(UTF8) and returns the number of characters written. It demonstrates basic file
+handling in Python, including creating or overwriting a file without the need
+for importing external modules.
 """
 
 
 def write_file(filename="", text=""):
-    """Écrit une chaîne dans un fichier texte (UTF-8) et retourne le nombre de
-    caractères écrits. Crée le fichier s'il n'existe pas, écrase s'il existe.
-
+    """Write a string to a text file (UTF8) and return the number of characters written.
+    
     Args:
-        filename (str): Nom du fichier à écrire.
-        text (str): Texte à écrire dans le fichier.
-
+        filename (str): The name of the file to write to.
+        text (str): The text to write to the file.
+        
     Returns:
-        int: Nombre de caractères écrits.
+        int: The number of characters written.
     """
     with open(filename, 'w', encoding='utf-8') as f:
         return f.write(text)
+
+if __name__ == "__main__":
+    # This block is for demonstration and testing.
+    # It will not be executed when importing this script as a module.
+    write_file = __import__('1-write_file').write_file
+
+    nb_characters = write_file("my_first_file.txt", "This School is so cool!\n")
+    print(nb_characters)
