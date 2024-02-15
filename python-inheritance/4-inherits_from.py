@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    hhhhhhhh
+"""
 
 
 def inherits_from(obj, a_class):
