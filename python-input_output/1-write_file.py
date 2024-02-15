@@ -1,9 +1,11 @@
+
 #!/usr/bin/python3
 """
-This module defines a write_file function that writes a string to a text file
-(UTF8) and returns the number of characters written. It demonstrates basic file
-handling in Python, including creating or overwriting a file without the need
-for importing external modules.
+A simple Python module to demonstrate file handling. It includes a function
+write_file that writes a specified string to a text file, using UTF-8 encoding.
+The function will create the file if it doesn't exist, or overwrite it if it does.
+This demonstrates basic file I/O operations, error handling, and the use of
+the 'with' statement for efficient and safe handling of file resources.
 """
 
 
