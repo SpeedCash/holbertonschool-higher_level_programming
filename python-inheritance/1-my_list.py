@@ -18,22 +18,3 @@ class MyList(list):
         laissant la liste originale inchangée.
         """
         print(sorted(self))
-
-
-if __name__ == "__main__":
-    # Création d'une instance de MyList
-    my_list = MyList()
-    my_list.append(1)
-    my_list.append(4)
-    my_list.append(2)
-    my_list.append(3)
-    my_list.append(5)
-
-    # Affichage de la liste originale
-    print("Liste originale:", my_list)
-
-    # Affichage de la liste triée
-    my_list.print_sorted()
-
-    # Confirmation que la liste originale reste inchangée
-    print("Liste après print_sorted:", my_list)
