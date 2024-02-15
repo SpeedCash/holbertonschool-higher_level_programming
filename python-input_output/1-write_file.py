@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def write_file(filename="", text=""):
     """Écrit une chaîne dans un fichier texte (UTF-8) et retourne le nombre de
     caractères écrits. Crée le fichier s'il n'existe pas, écrase s'il existe.
