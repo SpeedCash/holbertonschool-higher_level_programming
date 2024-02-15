@@ -1,28 +1,35 @@
 #!/usr/bin/python3
 
-"""
-Module implémentant la classe MyList, une sous-classe de\
-    list offrant une méthode
-supplémentaire, print_sorted, pour afficher ses éléments\
-    triés sans modification
-de la liste originale. Utilisation typique inclut l'ajout d'éléments suivis par
-un affichage trié et non trié pour illustrer la persistance\
-    de l'ordre original.
-"""
-
-
 class MyList(list):
-    """Extension de list avec une méthode pour imprimer la liste triée."""
+    """
+    MyList étend la classe intégrée list de Python en ajoutant une méthode
+    print_sorted, qui affiche la liste dans un ordre croissant sans modifier
+    la liste originale.
+    """
 
     def print_sorted(self):
-        """Affiche les éléments de la liste en ordre\
-            croissant sans modification."""
+        """
+        Imprime les éléments de la liste dans un ordre croissant.
+        Cette méthode crée une nouvelle liste triée pour l'affichage,
+        laissant la liste originale inchangée.
+        """
         print(sorted(self))
 
 
 if __name__ == "__main__":
-    # Démonstration de MyList
-    my_list = MyList([1, 4, 2, 3, 5])
-    print("Original:", my_list)
+    # Création d'une instance de MyList
+    my_list = MyList()
+    my_list.append(1)
+    my_list.append(4)
+    my_list.append(2)
+    my_list.append(3)
+    my_list.append(5)
+
+    # Affichage de la liste originale
+    print("Liste originale:", my_list)
+
+    # Affichage de la liste triée
     my_list.print_sorted()
-    print("Après print_sorted:", my_list)
+
+    # Confirmation que la liste originale reste inchangée
+    print("Liste après print_sorted:", my_list)
