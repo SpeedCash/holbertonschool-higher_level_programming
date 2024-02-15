@@ -19,12 +19,3 @@ def write_file(filename="", text=""):
     """
     with open(filename, 'w', encoding='utf-8') as f:
         return f.write(text)
-
-if __name__ == "__main__":
-    # This block is for demonstration and testing.
-    # It will not be executed when importing this script as a module.
-    write_file = __import__('1-write_file').write_file
-
-    nb_characters = write_file("my_first_file.txt", "This School is so cool!\n")
-    print(nb_characters)
-    
