@@ -90,3 +90,10 @@ class Rectangle(Base):
     def __str__(self):
         """Returns the formatted string representation of the Rectangle."""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def display(self):
+        """Prints the Rectangle instance using the '#' character,\
+        taking care of x and y."""
+        print("\n" * self.y, end="")
+        for row in range(self.height):
+            print(" " * self.x + "#" * self.width)
