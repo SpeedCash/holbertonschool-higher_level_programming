@@ -92,3 +92,22 @@ class Rectangle(Base):
     def area(self):
         """Returns the area of the Rectangle instance."""
         return self.width * self.height
+
+
+"""Module rectangle.py
+Extends the Rectangle class with a display method to print\
+    its representation using '#'.
+"""
+
+
+class Rectangle(Base):
+    """Defines the Rectangle class that inherits from Base.
+    Includes a method to display the rectangle using the '#' character.
+    """
+
+    # Constructeur et autres méthodes de la classe ici
+
+    def display(self):
+        """Prints the Rectangle instance using the '#' character."""
+        for _ in range(self.height):
+            print("#" * self.width)
