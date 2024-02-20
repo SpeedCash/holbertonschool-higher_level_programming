@@ -6,6 +6,7 @@ its area, and a method to print its representation using '#'.
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Defines the Rectangle class that inherits from Base.
     Adds validation to the setter methods to ensure that input values
@@ -85,3 +86,7 @@ class Rectangle(Base):
         """Prints the Rectangle instance using the '#' character."""
         for _ in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        """Returns the formatted string representation of the Rectangle."""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
