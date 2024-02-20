@@ -89,7 +89,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns the formatted string representation of the Rectangle."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
+            - {self.width}/{self.height}"
 
     def display(self):
         """Prints the Rectangle instance using the '#' character,\
@@ -97,3 +98,9 @@ class Rectangle(Base):
         print("\n" * self.y, end="")
         for row in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+    def update(self, *args):
+        """Updates the Rectangle attributes using no-keyword arguments."""
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        for attr, value in zip(attributes, args):
+            setattr(self, attr, value)
