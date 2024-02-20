@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """Module rectangle.py
-Updates the Rectangle class with attribute validation.
+Updates the Rectangle class with attribute validation, a method to calculate
+its area, and a method to print its representation using '#'.
 """
 
 from models.base import Base
 
-
 class Rectangle(Base):
     """Defines the Rectangle class that inherits from Base.
     Adds validation to the setter methods to ensure that input values
-    meet the required criteria.
+    meet the required criteria. Includes methods to calculate the area
+    of the rectangle and to display the rectangle using the '#' character.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -76,36 +77,9 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-
-"""Module rectangle.py
-Extends the Rectangle class with a method to calculate its area.
-"""
-
-
-class Rectangle(Base):
-    """Defines the Rectangle class that inherits from Base.
-    Now includes a method to calculate the area of the rectangle.
-    """
-
-    # Constructeur et autres méthodes de la classe ici
-
     def area(self):
         """Returns the area of the Rectangle instance."""
         return self.width * self.height
-
-
-"""Module rectangle.py
-Extends the Rectangle class with a display method to print\
-    its representation using '#'.
-"""
-
-
-class Rectangle(Base):
-    """Defines the Rectangle class that inherits from Base.
-    Includes a method to display the rectangle using the '#' character.
-    """
-
-    # Constructeur et autres méthodes de la classe ici
 
     def display(self):
         """Prints the Rectangle instance using the '#' character."""
