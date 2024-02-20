@@ -75,3 +75,20 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+
+"""Module rectangle.py
+Extends the Rectangle class with a method to calculate its area.
+"""
+
+
+class Rectangle(Base):
+    """Defines the Rectangle class that inherits from Base.
+    Now includes a method to calculate the area of the rectangle.
+    """
+
+    # Constructeur et autres méthodes de la classe ici
+
+    def area(self):
+        """Returns the area of the Rectangle instance."""
+        return self.width * self.height
