@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """Module base.py
 Defines the Base class with methods for JSON serialization/deserialization,
-saving to file, and creating instances from dictionaries.
+saving to file, creating instances from dictionaries, and loading from files.
 """
 
 import json
+import os
+
 
 class Base:
     """A base class for all models in the project."""
@@ -54,3 +56,13 @@ class Base:
             raise Exception("Unknown class name")
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances from a file."""
+        filename = "{}.json".format(cls.__name__)
+        if not os.path.exists(filename):
+            return []
+        with open(filename, 'r') as f:
+            list_dicts = cls.from_json_string(f.read())
+        return [cls.create(**d) for d in list_dicts]
