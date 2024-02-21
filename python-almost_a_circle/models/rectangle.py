@@ -1,24 +1,15 @@
 #!/usr/bin/python3
 """Module rectangle.py
-Defines the Rectangle class that inherits from Base. Includes attribute
-validation, area calculation, custom string representation, improved display
-method, and an update method that accepts both non-keyword and keyword
-arguments.
+Defines the Rectangle class that inherits from Base.
+Includes methods for validation, area calculation, string representation,
+displaying, updating attributes, and converting to dictionary representation.
 """
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Defines the Rectangle class that inherits from Base.
-
-    Attributes:
-        id (int): The id of the Rectangle, inherited from Base.
-        width (int): The width of the Rectangle.
-        height (int): The height of the Rectangle.
-        x (int): The x position of the Rectangle.
-        y (int): The y position of the Rectangle.
-    """
+    """Defines the Rectangle class that inherits from Base."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes a new Rectangle instance."""
@@ -30,10 +21,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Gets the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Sets the width of the rectangle with validation."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -42,10 +35,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Gets the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Sets the height of the rectangle with validation."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -54,10 +49,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Gets the x position of the rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Sets the x position of the rectangle with validation."""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -66,10 +63,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Gets the y position of the rectangle."""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Sets the y position of the rectangle with validation."""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -89,8 +88,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns the formatted string representation of the Rectangle."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
-            - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
+            {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
         """Updates attributes of the Rectangle using non-keyword\
@@ -103,3 +102,13 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key in attributes:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle."""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
