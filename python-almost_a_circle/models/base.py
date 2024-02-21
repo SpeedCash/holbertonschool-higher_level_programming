@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module base.py
-Defines the Base class with methods to serialize and deserialize to JSON.
+Defines the Base class with methods for JSON serialization and deserialization.
 """
 
 import json
@@ -21,7 +21,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries."""
-        if not list_dictionaries:
+        if list_dictionaries is None or not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -31,7 +31,14 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         list_dicts = []
         if list_objs is not None:
-            list_dicts = [obj.to_dictionary() for obj in list_objs]
-        json_string = cls.to_json_string(list_dicts)
+            for obj in list_objs:
+                list_dicts.append(obj.to_dictionary())
         with open(filename, 'w') as f:
-            f.write(json_string)
+            f.write(cls.to_json_string(list_dicts))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list represented by json_string."""
+        if json_string is None or json_string == "":
+            return []
+        return json.loads(json_string)
