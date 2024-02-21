@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """Module base.py
-Defines the Base class with methods for JSON serialization and deserialization.
+Defines the Base class with methods for JSON serialization/deserialization,
+saving to file, and creating instances from dictionaries.
 """
 
 import json
-
 
 class Base:
     """A base class for all models in the project."""
@@ -21,7 +21,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries."""
-        if list_dictionaries is None or not list_dictionaries:
+        if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -42,3 +42,15 @@ class Base:
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set."""
+        if cls.__name__ == "Rectangle":
+            dummy_instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy_instance = cls(1)
+        else:
+            raise Exception("Unknown class name")
+        dummy_instance.update(**dictionary)
+        return dummy_instance
