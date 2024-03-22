@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-This script lists all states from the database hbtn_0e_0_usa\
-    where the name starts with 'N'.
-It requires 3 command-line arguments: mysql username,\
-    mysql password, and database name.
+This module provides functionality to list states from\
+    the database hbtn_0e_0_usa
+where the name starts with 'N'. It demonstrates database\
+    connection and querying
+using MySQLdb.
 """
 
 import MySQLdb
@@ -12,8 +13,9 @@ import sys
 
 def main():
     """
-    Main function that fetches and prints states\
-        starting with 'N', sorted by states.id.
+    Connects to the MySQL database, queries for states starting with 'N',
+    and prints them. Requires command-line arguments for MySQL username,
+    password, and database name.
     """
     db = MySQLdb.connect(host="localhost", user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
